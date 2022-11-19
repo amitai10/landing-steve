@@ -10,7 +10,7 @@ module.exports = {
     subTitle: 'להזמנות 052-8083737',
     logo: 'logo.jpeg',
     description: `מהמטבח של סטיב`,
-    author: `steve`,
+    author: `steve frenkel`,
   },
   plugins: [
     {
