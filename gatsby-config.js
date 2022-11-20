@@ -9,7 +9,7 @@ module.exports = {
     title: 'מהמטבח של סטיב',
     subTitle: 'להזמנות 052-8083737',
     logo: 'logo.jpeg',
-    description: `מהמטבח של סטיב`,
+    description: `מהמטבח של סטיב פרנקל - מהמטבח ישירות אליכם, אירועי בוטיק, הזמנת אוכל לבית, אירועים בחצר`,
     author: `steve frenkel`,
   },
   plugins: [
