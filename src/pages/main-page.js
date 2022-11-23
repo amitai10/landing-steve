@@ -101,12 +101,12 @@ export default function Main() {
         <Container>
           <Banner>
             <LogoContainer>
-              <Logo src={withPrefix(`/images/logo.jpeg`)} />
+              <Logo src={withPrefix(`/images/logo.jpeg`)} alt="מהמטבח של סטיב" />
             </LogoContainer>
           </Banner>
             <Title />
             <ContactIcons />
-            <Image src={withPrefix(`/images/pic.jpeg`)} />
+            <Image src={withPrefix(`/images/pic.jpeg`)} alt="מהמטבח של סטיב" />
         </Container>
       </Layout>
     </div>
