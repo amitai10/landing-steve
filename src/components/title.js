@@ -26,10 +26,16 @@ const MainTitle2 = styled.div`
   margin-bottom: 10px;
 `
 const LinkContainer = styled.div`
-  display: flex;
-  font-size: 1.5em;
-  text-align: center;
-  margin-bottom: 10px;
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: #BDF1FF;
+    padding: 15px;
+    border-radius: 15px;
 `
 
 const Link = styled.a`
@@ -48,6 +54,25 @@ const SubTitle = styled.div`
     font-size: 1.5em;
   }
   text-align: center;
+`
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  // @media (min-width: 650px) {
+  //    font-size: 3em;
+  // }
+`
+
+const LinkHeader = styled.div`
+    font-size: 0.8em;
+    align-self: end;
+`
+const LinkContent = styled.div`
+  font-size: 3em;
+  line-height: 0.8;
 `
 
 export default function Title() {
@@ -80,9 +105,21 @@ export default function Title() {
         )} */}
       <MainTitle>{title}</MainTitle>
       <SubTitle>להזמנות 052-8083737</SubTitle>
-      <LinkContainer>
-        <Link href="http://catalog4u.minicard.co.il/card/steve-frenkel/" target="_blank">לקטלוג המלא</Link>
-      </LinkContainer>
+      <Links>
+        <LinkContainer onClick={() => window.open("http://bit.ly/3MtcDBu", "_blank")}>
+          <LinkHeader>תפריט לאירוע
+          </LinkHeader>
+          <LinkContent>חלבי
+          </LinkContent>
+        </LinkContainer>
+        <LinkContainer onClick={() => window.open("http://bit.ly/4cRgrXZ", "_blank")}>
+          <LinkHeader>תפריט לאירוע
+          </LinkHeader>
+          <LinkContent>בשרי
+          </LinkContent>
+        </LinkContainer>
+      </Links>
+
 
     </Container>
   )
