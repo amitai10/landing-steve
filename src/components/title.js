@@ -106,13 +106,13 @@ export default function Title() {
       <MainTitle>{title}</MainTitle>
       <SubTitle>להזמנות 052-8083737</SubTitle>
       <Links>
-        <LinkContainer onClick={() => window.open("http://bit.ly/3MtcDBu", "_blank")}>
+        <LinkContainer onClick={() => window.open("https://bit.ly/3LrC9Ku", "_blank")}>
           <LinkHeader>תפריט לאירוע
           </LinkHeader>
           <LinkContent>חלבי
           </LinkContent>
         </LinkContainer>
-        <LinkContainer onClick={() => window.open("http://bit.ly/4cRgrXZ", "_blank")}>
+        <LinkContainer onClick={() => window.open("https://bit.ly/4szmZnb", "_blank")}>
           <LinkHeader>תפריט לאירוע
           </LinkHeader>
           <LinkContent>בשרי
