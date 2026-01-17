@@ -217,6 +217,17 @@ const HeroSubtitle = styled.p`
   margin-bottom: 2rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   color: #ffc74c;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+
+  @media (max-width: 480px) {
+    font-size: 1.15rem;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    padding: 0 10px;
+  }
 `
 
 const FilterContainer = styled.div`
@@ -381,50 +392,52 @@ const ModalCaption = styled.div`
 // Data constructed from folder structure
 const MENU_ITEMS = [
   // Meat Items
-  { id: "meat-1", title: "מנה בשרית 1", category: "meat", image: "/images/meat/20210930_194746.jpg" },
-  { id: "meat-2", title: "מנה בשרית 2", category: "meat", image: "/images/meat/20230316_145304.jpg" },
-  { id: "meat-3", title: "מנה בשרית 3", category: "meat", image: "/images/meat/20240202_150255.jpg" },
-  { id: "meat-4", title: "מנה בשרית 4", category: "meat", image: "/images/meat/20240913_091520.jpg" },
-  { id: "meat-5", title: "מנה בשרית 5", category: "meat", image: "/images/meat/20250909_192415.jpg" },
-  { id: "meat-6", title: "מנה בשרית 6", category: "meat", image: "/images/meat/IMG_20220412_080711_513.jpg" },
-  { id: "meat-7", title: "מנה בשרית 7", category: "meat", image: "/images/meat/IMG_20220818_121210_558.jpg" },
-  { id: "meat-8", title: "מנה בשרית 8", category: "meat", image: "/images/meat/IMG_20230531_162853.jpg" },
-  { id: "meat-9", title: "מנה בשרית 9", category: "meat", image: "/images/meat/IMG-20220806-WA0024.jpg" },
-  { id: "meat-10", title: "מנה בשרית 10", category: "meat", image: "/images/meat/IMG-20230305-WA0040.jpg" },
-  { id: "meat-11", title: "מנה בשרית 11", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
+  { id: "meat-1", title: "סנדוויץ' חלה עם שניצל", category: "meat", image: "/images/meat/20210930_194746.jpg" },
+  { id: "meat-2", title: "קדירות בשר", category: "meat", image: "/images/meat/20230316_145304.jpg" },
+  { id: "meat-3", title: "רוסטביף מגולגל עם צ'ימיצ'ורי", category: "meat", image: "/images/meat/20240202_150255.jpg" },
+  { id: "meat-4", title: "פילה/סינטה", category: "meat", image: "/images/meat/20240913_091520.jpg" },
+  { id: "meat-5", title: "סוכריות עראייס", category: "meat", image: "/images/meat/20250909_192415.jpg" },
+  { id: "meat-6", title: "רצועות רוסטביף", category: "meat", image: "/images/meat/IMG_20220412_080711_513.jpg" },
+  { id: "meat-7", title: "רוסטביף על הרשת", category: "meat", image: "/images/meat/IMG_20220818_121210_558.jpg" },
+  { id: "meat-8", title: "פוקצ'ה עראייס", category: "meat", image: "/images/meat/IMG_20230531_162853.jpg" },
+  { id: "meat-9", title: "מבחר בשרים על האש", category: "meat", image: "/images/meat/IMG-20220806-WA0024.jpg" },
+  { id: "meat-10", title: "ה-המבורגר", category: "meat", image: "/images/meat/IMG-20230305-WA0040.jpg" },
+  { id: "meat-11", title: "מיני המבורגר - קומפלט", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
 
   // Vegetarian Items
-  { id: "veg-1", title: "מנה צמחונית 1", category: "vegetarian", image: "/images/vegeterian/20211108_141744.jpg" },
-  { id: "veg-2", title: "מנה צמחונית 2", category: "vegetarian", image: "/images/vegeterian/20240628_131037.jpg" },
-  { id: "veg-3", title: "מנה צמחונית 3", category: "vegetarian", image: "/images/vegeterian/20240727_180616.jpg" },
-  { id: "veg-4", title: "מנה צמחונית 4", category: "vegetarian", image: "/images/vegeterian/20250210_125914.jpg" },
-  { id: "veg-5", title: "מנה צמחונית 5", category: "vegetarian", image: "/images/vegeterian/20251024_135528.jpg" },
-  { id: "veg-6", title: "מנה צמחונית 6", category: "vegetarian", image: "/images/vegeterian/20251114_125453.jpg" },
-  { id: "veg-7", title: "מנה צמחונית 7", category: "vegetarian", image: "/images/vegeterian/20251212_154419.jpg" },
-  { id: "veg-8", title: "מנה צמחונית 8", category: "vegetarian", image: "/images/vegeterian/IMG_20220401_092927_406.jpg" },
-  { id: "veg-9", title: "מנה צמחונית 9", category: "vegetarian", image: "/images/vegeterian/IMG_20220704_095651_208.jpg" },
-  { id: "veg-10", title: "מנה צמחונית 10", category: "vegetarian", image: "/images/vegeterian/IMG_20230119_152618_759.jpg" },
-  { id: "veg-11", title: "מנה צמחונית 11", category: "vegetarian", image: "/images/vegeterian/IMG-20230602-WA0045.jpg" },
-  { id: "veg-12", title: "מנה צמחונית 12", category: "vegetarian", image: "/images/vegeterian/IMG-20231109-WA0042.jpg" },
-  { id: "veg-13", title: "מנה צמחונית 13", category: "vegetarian", image: "/images/vegeterian/IMG-20240611-WA0039.jpg" },
-  { id: "veg-14", title: "מנה צמחונית 14", category: "vegetarian", image: "/images/vegeterian/IMG-20240624-WA0048.jpg" },
+  { id: "veg-1", title: "סלט אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/20211108_141744.jpg" },
+  { id: "veg-2", title: "פלטת ירקות", category: "vegetarian", image: "/images/vegeterian/20240628_131037.jpg" },
+  { id: "veg-3", title: "סלט בוראטה", category: "vegetarian", image: "/images/vegeterian/20240727_180616.jpg" },
+  { id: "veg-4", title: "פיצות", category: "vegetarian", image: "/images/vegeterian/20250210_125914.jpg" },
+  { id: "veg-5", title: "סלט קפרזה", category: "vegetarian", image: "/images/vegeterian/20251024_135528.jpg" },
+  { id: "veg-6", title: "פוקצ'ה אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/20251114_125453.jpg" },
+  { id: "veg-7", title: "פיצות נפוליטאנה", category: "vegetarian", image: "/images/vegeterian/20251212_154419.jpg" },
+  { id: "veg-8", title: "כדורי פלאפל", category: "vegetarian", image: "/images/vegeterian/IMG_20220401_092927_406.jpg" },
+  { id: "veg-9", title: "חמשוקה", category: "vegetarian", image: "/images/vegeterian/IMG_20220704_095651_208.jpg" },
+  { id: "veg-10", title: "לזניה", category: "vegetarian", image: "/images/vegeterian/IMG_20230119_152618_759.jpg" },
+  { id: "veg-11", title: "לביבות בטטה", category: "vegetarian", image: "/images/vegeterian/IMG-20230602-WA0045.jpg" },
+  { id: "veg-12", title: "מבחר טאפאסים", category: "vegetarian", image: "/images/vegeterian/IMG-20231109-WA0042.jpg" },
+  { id: "veg-13", title: "פלאפל חצילים", category: "vegetarian", image: "/images/vegeterian/IMG-20240611-WA0039.jpg" },
+  { id: "veg-14", title: "אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/IMG-20240624-WA0048.jpg" },
+  { id: "veg-15", title: "פלאפל מהסרטים", category: "vegetarian", image: "/images/vegeterian/IMG_20240104_150452_602.jpg" },
+  { id: "veg-16", title: "ענני ניוקי עבודת יד", category: "vegetarian", image: "/images/vegeterian/IMG_20230817_122457_925.jpg" },
 
   // Salads
-  { id: "salad-1", title: "סלט 1", category: "salads", image: "/images/salads/20231002_105253.jpg" },
-  { id: "salad-2", title: "סלט 2", category: "salads", image: "/images/salads/20240628_130947.jpg" },
-  { id: "salad-3", title: "סלט 3", category: "salads", image: "/images/salads/IMG-20240624-WA0045.jpg" },
-  { id: "salad-4", title: "סלט 4", category: "salads", image: "/images/salads/IMG-20240624-WA0050.jpg" },
+  { id: "salad-1", title: "סלט קינואה", category: "salads", image: "/images/salads/20231002_105253.jpg" },
+  { id: "salad-2", title: "פרחי ירקות", category: "salads", image: "/images/salads/20240628_130947.jpg" },
+  { id: "salad-3", title: "סלט עגבניות שרי", category: "salads", image: "/images/salads/IMG-20240624-WA0045.jpg" },
+  { id: "salad-4", title: "קרפצ'יו סלק", category: "salads", image: "/images/salads/IMG-20240624-WA0050.jpg" },
+  { id: "salad-5", title: "כרובית בטאבון", category: "salads", image: "/images/vibe/20240131_110342.jpg" },
 
   // Vibe
-  { id: "vibe-1", title: "אווירה 1", category: "vibe", image: "/images/vibe/20240131_110342.jpg" },
-  { id: "vibe-2", title: "אווירה 2", category: "vibe", image: "/images/vibe/facebook_1768560568111_7417880665071946351.jpg" },
-  { id: "vibe-3", title: "אווירה 3", category: "vibe", image: "/images/vibe/facebook_1768560622344_7417880892543167053.jpg" },
-  { id: "vibe-4", title: "אווירה 4", category: "vibe", image: "/images/vibe/facebook_1768560723205_7417881315584536608.jpg" },
-  { id: "vibe-5", title: "אווירה 5", category: "vibe", image: "/images/vibe/facebook_1768560797926_7417881628985552747.jpg" },
-  { id: "vibe-6", title: "אווירה 6", category: "vibe", image: "/images/vibe/facebook_1768560934105_7417882200163046030.jpg" },
-  { id: "vibe-7", title: "אווירה 7", category: "vibe", image: "/images/vibe/IMG-20211106-WA0008.jpg" },
-  { id: "vibe-8", title: "אווירה 8", category: "vibe", image: "/images/vibe/IMG-20220701-WA0042.jpg" },
-  { id: "vibe-9", title: "אווירה 9", category: "vibe", image: "/images/vibe/IMG-20260103-WA0027.jpg" },
+  { id: "vibe-2", title: "החצר", category: "vibe", image: "/images/vibe/facebook_1768560568111_7417880665071946351.jpg" },
+  { id: "vibe-3", title: "תמיד עם חיוך", category: "vibe", image: "/images/vibe/facebook_1768560622344_7417880892543167053.jpg" },
+  { id: "vibe-4", title: "בת מצווש", category: "vibe", image: "/images/vibe/facebook_1768560723205_7417881315584536608.jpg" },
+  { id: "vibe-5", title: "בחצר", category: "vibe", image: "/images/vibe/facebook_1768560797926_7417881628985552747.jpg" },
+  { id: "vibe-6", title: "הסיירת", category: "vibe", image: "/images/vibe/facebook_1768560934105_7417882200163046030.jpg" },
+  { id: "vibe-7", title: "חצילים רוקדים סלסה ", category: "vibe", image: "/images/vibe/IMG-20211106-WA0008.jpg" },
+  { id: "vibe-8", title: "מבחר סלטים", category: "vibe", image: "/images/vibe/IMG-20220701-WA0042.jpg" },
+  { id: "vibe-9", title: "מהמטבח באהבה", category: "vibe", image: "/images/vibe/IMG-20260103-WA0027.jpg" },
 ];
 
 const CATEGORIES = {
@@ -480,11 +493,11 @@ export default function MainPage() {
             ref={videoRef}
             onLoadedMetadata={() => {
               if (videoRef.current) {
-                videoRef.current.playbackRate = 1;
+                videoRef.current.playbackRate = 0.5;
               }
             }}
           >
-            <source src="https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/8_slow_10x_smooth.mp4" type="video/mp4" />
+            <source src="https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/VID-20260103-WA0025.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </VideoBackground>
           <HeroOverlay />
@@ -504,7 +517,7 @@ export default function MainPage() {
             <ContactIconImg src={withPrefix("/images/whatsapp.svg")} alt="" />
           </ContactIconLink>
           <ContactIconLink
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/stevefrenkel.72?igsh=aTZtMG4xOWx0MXk1/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
@@ -562,9 +575,7 @@ export default function MainPage() {
             >
               <CardImage src={withPrefix(item.image)} />
               <CardContent>
-                <CardCategory>{CATEGORIES[item.category]}</CardCategory>
                 <CardTitle>{item.title}</CardTitle>
-                <CardId>ID: {item.id}</CardId>
               </CardContent>
             </Card>
           ))}
@@ -586,17 +597,12 @@ export default function MainPage() {
                 alt={selectedItem.title || selectedItem.id}
               />
               <ModalCaption>
-                {selectedItem.title} — {selectedItem.id}
+                {selectedItem.title}
               </ModalCaption>
             </ModalContent>
           </ModalOverlay>
         )}
         
-        {/* Infinite Gallery Placeholder note */}
-        <div style={{ textAlign: 'center', padding: '50px', color: '#888' }}>
-          <p>... טוען עוד מנות ...</p>
-        </div>
-
       </PageContainer>
     </Layout>
   )
