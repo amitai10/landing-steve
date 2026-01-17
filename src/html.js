@@ -5,8 +5,7 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-      <title>מהמטבח של סטיב</title>
-      <meta name="description" content="מהמטבח של סטיב פרנקל - מהמטבח ישירות אליכם, אירועי בוטיק, הזמנת אוכל לבית, אירועים בחצר"/>
+        {/* Title/description/canonical are set via `src/components/seo.js` (react-helmet) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KW11E2SPZ"></script>
         <script
           dangerouslySetInnerHTML={{

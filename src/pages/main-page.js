@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { withPrefix } from "gatsby"
+import SEO from "../components/seo"
 
 // Styled Components
 const PageContainer = styled.div`
@@ -405,22 +406,22 @@ const MENU_ITEMS = [
   { id: "meat-11", title: "מיני המבורגר - קומפלט", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
 
   // Vegetarian Items
-  { id: "veg-1", title: "סלט אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/20211108_141744.jpg" },
-  { id: "veg-2", title: "פלטת ירקות", category: "vegetarian", image: "/images/vegeterian/20240628_131037.jpg" },
-  { id: "veg-3", title: "סלט בוראטה", category: "vegetarian", image: "/images/vegeterian/20240727_180616.jpg" },
-  { id: "veg-4", title: "פיצות", category: "vegetarian", image: "/images/vegeterian/20250210_125914.jpg" },
-  { id: "veg-5", title: "סלט קפרזה", category: "vegetarian", image: "/images/vegeterian/20251024_135528.jpg" },
-  { id: "veg-6", title: "פוקצ'ה אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/20251114_125453.jpg" },
-  { id: "veg-7", title: "פיצות נפוליטאנה", category: "vegetarian", image: "/images/vegeterian/20251212_154419.jpg" },
-  { id: "veg-8", title: "כדורי פלאפל", category: "vegetarian", image: "/images/vegeterian/IMG_20220401_092927_406.jpg" },
-  { id: "veg-9", title: "חמשוקה", category: "vegetarian", image: "/images/vegeterian/IMG_20220704_095651_208.jpg" },
-  { id: "veg-10", title: "לזניה", category: "vegetarian", image: "/images/vegeterian/IMG_20230119_152618_759.jpg" },
-  { id: "veg-11", title: "לביבות בטטה", category: "vegetarian", image: "/images/vegeterian/IMG-20230602-WA0045.jpg" },
-  { id: "veg-12", title: "מבחר טאפאסים", category: "vegetarian", image: "/images/vegeterian/IMG-20231109-WA0042.jpg" },
-  { id: "veg-13", title: "פלאפל חצילים", category: "vegetarian", image: "/images/vegeterian/IMG-20240611-WA0039.jpg" },
-  { id: "veg-14", title: "אנטיפסטי", category: "vegetarian", image: "/images/vegeterian/IMG-20240624-WA0048.jpg" },
-  { id: "veg-15", title: "פלאפל מהסרטים", category: "vegetarian", image: "/images/vegeterian/IMG_20240104_150452_602.jpg" },
-  { id: "veg-16", title: "ענני ניוקי עבודת יד", category: "vegetarian", image: "/images/vegeterian/IMG_20230817_122457_925.jpg" },
+  { id: "veg-1", title: "סלט אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/20211108_141744.jpg" },
+  { id: "veg-2", title: "פלטת ירקות", category: "vegetarian", image: "/images/vegetarian/20240628_131037.jpg" },
+  { id: "veg-3", title: "סלט בוראטה", category: "vegetarian", image: "/images/vegetarian/20240727_180616.jpg" },
+  { id: "veg-4", title: "פיצות", category: "vegetarian", image: "/images/vegetarian/20250210_125914.jpg" },
+  { id: "veg-5", title: "סלט קפרזה", category: "vegetarian", image: "/images/vegetarian/20251024_135528.jpg" },
+  { id: "veg-6", title: "פוקצ'ה אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/20251114_125453.jpg" },
+  { id: "veg-7", title: "פיצות נפוליטאנה", category: "vegetarian", image: "/images/vegetarian/20251212_154419.jpg" },
+  { id: "veg-8", title: "כדורי פלאפל", category: "vegetarian", image: "/images/vegetarian/IMG_20220401_092927_406.jpg" },
+  { id: "veg-9", title: "חמשוקה", category: "vegetarian", image: "/images/vegetarian/IMG_20220704_095651_208.jpg" },
+  { id: "veg-10", title: "לזניה", category: "vegetarian", image: "/images/vegetarian/IMG_20230119_152618_759.jpg" },
+  { id: "veg-11", title: "לביבות בטטה", category: "vegetarian", image: "/images/vegetarian/IMG-20230602-WA0045.jpg" },
+  { id: "veg-12", title: "מבחר טאפאסים", category: "vegetarian", image: "/images/vegetarian/IMG-20231109-WA0042.jpg" },
+  { id: "veg-13", title: "פלאפל חצילים", category: "vegetarian", image: "/images/vegetarian/IMG-20240611-WA0039.jpg" },
+  { id: "veg-14", title: "אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/IMG-20240624-WA0048.jpg" },
+  { id: "veg-15", title: "פלאפל מהסרטים", category: "vegetarian", image: "/images/vegetarian/IMG_20240104_150452_602.jpg" },
+  { id: "veg-16", title: "ענני ניוקי עבודת יד", category: "vegetarian", image: "/images/vegetarian/IMG_20230817_122457_925.jpg" },
 
   // Salads
   { id: "salad-1", title: "סלט קינואה", category: "salads", image: "/images/salads/20231002_105253.jpg" },
@@ -475,6 +476,12 @@ export default function MainPage() {
 
   return (
     <Layout>
+      <SEO
+        title="מהמטבח של סטיב"
+        description="מהמטבח של סטיב פרנקל - אירועי בוטיק, מגשי אירוח ואוכל עד הבית"
+        pathname="/"
+        image="/images/logo.jpeg"
+      />
       <PageContainer>
         <HeroSection>
           <HeroTopBar>

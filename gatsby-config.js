@@ -11,6 +11,12 @@ module.exports = {
     logo: 'logo.jpeg',
     description: `מהמטבח של סטיב פרנקל - מהמטבח ישירות אליכם, אירועי בוטיק, הזמנת אוכל לבית, אירועים בחצר`,
     author: `steve frenkel`,
+    // Netlify provides URL / DEPLOY_PRIME_URL. This keeps canonical URLs correct per deploy.
+    siteUrl:
+      process.env.URL ||
+      process.env.DEPLOY_PRIME_URL ||
+      `https://example.com`,
+    phone: `052-8083737`,
   },
   plugins: [
     {
@@ -44,8 +50,8 @@ module.exports = {
         name: `סטיב פרנקל`,
         short_name: `סטיב`,
         start_url: `/`,
-        background_color: `#6b37bf`,
-        theme_color: `#6b37bf`,
+        background_color: `#bdf1ff`,
+        theme_color: `#bdf1ff`,
         display: `standalone`,
         icon: `src/images/logo.jpeg`, // This path is relative to the root of the site.
       },
