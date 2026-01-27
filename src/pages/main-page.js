@@ -290,12 +290,48 @@ const Card = styled.div`
   }
 `
 
+const CardMedia = styled.div`
+  position: relative;
+`
+
 const CardImage = styled.div`
   height: 250px;
   background-color: #eee;
   background-image: url("${props => props.src}");
   background-size: cover;
   background-position: center;
+`
+
+const PlayOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const PlayButton = styled.div`
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+
+  &::before {
+    content: "";
+    display: block;
+    margin-left: 4px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid rgba(255,255,255,0.92);
+  }
 `
 
 const CardContent = styled.div`
@@ -357,6 +393,7 @@ const ModalCloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 20;
   width: 44px;
   height: 44px;
   border-radius: 14px;
@@ -382,6 +419,23 @@ const ModalImage = styled.img`
   display: block;
 `
 
+const CardVideoThumb = styled.video`
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  background: #000;
+`
+
+const ModalVideo = styled.video`
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  border-radius: 14px;
+  background: black;
+  display: block;
+`
+
 const ModalCaption = styled.div`
   margin-top: 10px;
   color: rgba(255,255,255,0.92);
@@ -404,6 +458,8 @@ const MENU_ITEMS = [
   { id: "meat-9", title: "מבחר בשרים על האש", category: "meat", image: "/images/meat/IMG-20220806-WA0024.jpg" },
   { id: "meat-10", title: "ה-המבורגר", category: "meat", image: "/images/meat/IMG-20230305-WA0040.jpg" },
   { id: "meat-11", title: "מיני המבורגר - קומפלט", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
+  { id: "meat-12", title: "עוף כפרי קלאסי", category: "meat", image: "/images/meat/20250905_175809.jpg" },
+  { id: "meat-13", title: "רביולי עם בשר מפורק", category: "meat", image: "/images/meat/5803fbcbacdc9bcea8a750d312a31d2a_1768122669877_0.webp.jpg" },
 
   // Vegetarian Items
   { id: "veg-1", title: "סלט אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/20211108_141744.jpg" },
@@ -412,7 +468,7 @@ const MENU_ITEMS = [
   { id: "veg-4", title: "פיצות", category: "vegetarian", image: "/images/vegetarian/20250210_125914.jpg" },
   { id: "veg-5", title: "סלט קפרזה", category: "vegetarian", image: "/images/vegetarian/20251024_135528.jpg" },
   { id: "veg-6", title: "פוקצ'ה אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/20251114_125453.jpg" },
-  { id: "veg-7", title: "פיצות נפוליטאנה", category: "vegetarian", image: "/images/vegetarian/20251212_154419.jpg" },
+  { id: "veg-7", title: "פיצות נפוליטנה", category: "vegetarian", image: "/images/vegetarian/20251212_154419.jpg" },
   { id: "veg-8", title: "כדורי פלאפל", category: "vegetarian", image: "/images/vegetarian/IMG_20220401_092927_406.jpg" },
   { id: "veg-9", title: "חמשוקה", category: "vegetarian", image: "/images/vegetarian/IMG_20220704_095651_208.jpg" },
   { id: "veg-10", title: "לזניה", category: "vegetarian", image: "/images/vegetarian/IMG_20230119_152618_759.jpg" },
@@ -422,6 +478,7 @@ const MENU_ITEMS = [
   { id: "veg-14", title: "אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/IMG-20240624-WA0048.jpg" },
   { id: "veg-15", title: "פלאפל מהסרטים", category: "vegetarian", image: "/images/vegetarian/IMG_20240104_150452_602.jpg" },
   { id: "veg-16", title: "ענני ניוקי עבודת יד", category: "vegetarian", image: "/images/vegetarian/IMG_20230817_122457_925.jpg" },
+  { id: "veg-17", title: "פיצה נוטלה", category: "vegetarian", image: "/images/vegetarian/IMG-20250613-WA0034.jpg" },
 
   // Salads
   { id: "salad-1", title: "סלט קינואה", category: "salads", image: "/images/salads/20231002_105253.jpg" },
@@ -439,13 +496,21 @@ const MENU_ITEMS = [
   { id: "vibe-7", title: "חצילים רוקדים סלסה ", category: "vibe", image: "/images/vibe/IMG-20211106-WA0008.jpg" },
   { id: "vibe-8", title: "מבחר סלטים", category: "vibe", image: "/images/vibe/IMG-20220701-WA0042.jpg" },
   { id: "vibe-9", title: "מהמטבח באהבה", category: "vibe", image: "/images/vibe/IMG-20260103-WA0027.jpg" },
+
+  // Videos (placeholder titles for easy renaming)
+  { id: "video-1", title: "פילה לברק בטאבון", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/5.mp4" },
+  { id: "video-2", title: "כשההמבורגר פוגש את האש", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/8a.mp4" },
+  { id: "video-3", title: "חגיגת גריל", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/7.mp4" },
+  { id: "video-4", title: "שווארמה על הפלנצ'ה", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/6a.mp4" },
+  { id: "video-5", title: "מסיבת חוף", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/9.mp4" },
 ];
 
 const CATEGORIES = {
   meat: "בשרי",
   vegetarian: "צמחוני",
   salads: "סלטים",
-  vibe: "אווירה"
+  vibe: "אווירה",
+  videos: "סרטונים",
 };
 
 export default function MainPage() {
@@ -529,12 +594,7 @@ export default function MainPage() {
             rel="noreferrer"
             aria-label="Instagram"
           >
-            <InstagramIconDark viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="#111"
-                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5Zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5ZM18 6.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"
-              />
-            </InstagramIconDark>
+            <ContactIconImg src={withPrefix("/images/instagram.png")} alt="" />
           </ContactIconLink>
           <ContactIconLink
             href="https://www.facebook.com/steve.frenkel.1"
@@ -566,6 +626,9 @@ export default function MainPage() {
           <FilterButton active={filter === 'vibe'} onClick={() => setFilter('vibe')}>
             אווירה
           </FilterButton>
+          <FilterButton active={filter === 'videos'} onClick={() => setFilter('videos')}>
+            סרטונים
+          </FilterButton>
         </FilterContainer>
 
         <GalleryGrid>
@@ -580,7 +643,23 @@ export default function MainPage() {
               }}
               aria-label={`Open ${item.id}`}
             >
-              <CardImage src={withPrefix(item.image)} />
+              <CardMedia>
+                {item.video ? (
+                  <CardVideoThumb
+                    src={`${item.video}#t=0.1`}
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
+                ) : (
+                  <CardImage src={withPrefix(item.image)} />
+                )}
+                {item.video && (
+                  <PlayOverlay aria-hidden="true">
+                    <PlayButton />
+                  </PlayOverlay>
+                )}
+              </CardMedia>
               <CardContent>
                 <CardTitle>{item.title}</CardTitle>
               </CardContent>
@@ -599,10 +678,16 @@ export default function MainPage() {
               <ModalCloseButton onClick={() => setSelectedItem(null)} aria-label="Close">
                 ×
               </ModalCloseButton>
-              <ModalImage
-                src={withPrefix(selectedItem.image)}
-                alt={selectedItem.title || selectedItem.id}
-              />
+              {selectedItem.video ? (
+                <ModalVideo key={selectedItem.id} controls autoPlay playsInline>
+                  <source src={selectedItem.video} type="video/mp4" />
+                </ModalVideo>
+              ) : (
+                <ModalImage
+                  src={withPrefix(selectedItem.image)}
+                  alt={selectedItem.title || selectedItem.id}
+                />
+              )}
               <ModalCaption>
                 {selectedItem.title}
               </ModalCaption>
