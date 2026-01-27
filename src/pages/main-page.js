@@ -458,7 +458,7 @@ const MENU_ITEMS = [
   { id: "meat-9", title: "מבחר בשרים על האש", category: "meat", image: "/images/meat/IMG-20220806-WA0024.jpg" },
   { id: "meat-10", title: "ה-המבורגר", category: "meat", image: "/images/meat/IMG-20230305-WA0040.jpg" },
   { id: "meat-11", title: "מיני המבורגר - קומפלט", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
-  { id: "meat-12", title: "עוף כפרי קלאסי", category: "meat", image: "/images/meat/20250905_175809.jpg" },
+  { id: "meat-12", title: "עוף בסגנון רוטיסרי", category: "meat", image: "/images/meat/20250905_175809.jpg" },
   { id: "meat-13", title: "רביולי עם בשר מפורק", category: "meat", image: "/images/meat/5803fbcbacdc9bcea8a750d312a31d2a_1768122669877_0.webp.jpg" },
 
   // Vegetarian Items
