@@ -503,6 +503,7 @@ const MENU_ITEMS = [
   { id: "video-3", title: "חגיגת גריל", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/7.mp4" },
   { id: "video-4", title: "שווארמה על הפלנצ'ה", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/6a.mp4" },
   { id: "video-5", title: "מסיבת חוף", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/9.mp4" },
+  { id: "video-6", title: "אוכל הצגה", category: "videos", image: "/images/logo.jpeg", video: "https://pub-ab43bc4b19a740dc9966f664f206b079.r2.dev/10a.mp4" }
 ];
 
 const CATEGORIES = {
