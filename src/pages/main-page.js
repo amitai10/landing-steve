@@ -460,6 +460,7 @@ const MENU_ITEMS = [
   { id: "meat-11", title: "מיני המבורגר - קומפלט", category: "meat", image: "/images/meat/IMG-20230630-WA0040.jpg" },
   { id: "meat-12", title: "עוף בסגנון רוטיסרי", category: "meat", image: "/images/meat/20250905_175809.jpg" },
   { id: "meat-13", title: "רביולי עם בשר מפורק", category: "meat", image: "/images/meat/5803fbcbacdc9bcea8a750d312a31d2a_1768122669877_0.webp.jpg" },
+  { id: "meat-14", title: "טאקו קבב (עבודת יד)", category: "meat", image: "/images/meat/taco-kebab-handmade.jpg" },
 
   // Vegetarian Items
   { id: "veg-1", title: "סלט אנטיפסטי", category: "vegetarian", image: "/images/vegetarian/20211108_141744.jpg" },
