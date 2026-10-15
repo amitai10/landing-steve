@@ -1,4 +1,4 @@
-// Ready-made home meals menu ("ארוחות מוכנות הביתה"), transcribed from the printed menu.
+// Ready-made home meals menu ("אוכל ביתי במשלוחים"), transcribed from the printed menu.
 // Prices are in ₪. `note` is the portion size shown next to the price.
 export const READY_MEALS_MENU = [
   {
