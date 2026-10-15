@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { withPrefix } from "gatsby"
@@ -384,6 +384,20 @@ function MenuItem({ item }) {
 
 export default function MenuPage() {
   const [activeSection, setActiveSection] = useState(READY_MEALS_MENU[0].id)
+  const navRef = useRef(null)
+
+  // Scroll in JS rather than relying on the hash change: on mobile the
+  // router's hash handling cancels the native anchor jump, and the sticky
+  // nav wraps to more rows, so offset by its real height.
+  const scrollToSection = (e, id) => {
+    const target = document.getElementById(id)
+    if (!target) return
+    e.preventDefault()
+    const navHeight = navRef.current ? navRef.current.offsetHeight : 0
+    const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12
+    window.scrollTo({ top, behavior: "smooth" })
+    setActiveSection(id)
+  }
 
   // Highlight the section currently in view in the sticky nav
   useEffect(() => {
@@ -453,11 +467,12 @@ export default function MenuPage() {
           </IntroItem>
         </Intro>
 
-        <SectionNav aria-label="קטגוריות בתפריט">
+        <SectionNav ref={navRef} aria-label="קטגוריות בתפריט">
           {READY_MEALS_MENU.map(section => (
             <SectionNavLink
               key={section.id}
               href={`#${section.id}`}
+              onClick={e => scrollToSection(e, section.id)}
               $active={activeSection === section.id}
             >
               {section.title}
