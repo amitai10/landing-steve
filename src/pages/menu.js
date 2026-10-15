@@ -406,11 +406,11 @@ export default function MenuPage() {
   return (
     <Layout>
       <SEO
-        title="ארוחות מוכנות הביתה"
+        title="אוכל ביתי במשלוחים"
         description="תפריט ארוחות מוכנות הביתה מהמטבח של סטיב – אוכל ביתי טרי בקופסאות, מוכן לחימום: מנות עיקריות, מרקים, מנות טבעוניות ותוספות"
         pathname="/menu/"
         image="/images/og-menu.jpg"
-        imageAlt="אוכל ביתי ומשלוחים – מהמטבח של סטיב"
+        imageAlt="אוכל ביתי במשלוחים – מהמטבח של סטיב"
         imageWidth={1200}
         imageHeight={630}
       />
@@ -421,7 +421,7 @@ export default function MenuPage() {
           </HeroTopBar>
           <HeroOverlay />
           <HeroContent>
-            <HeroTitle>ארוחות מוכנות הביתה</HeroTitle>
+            <HeroTitle>אוכל ביתי במשלוחים</HeroTitle>
             <HeroSubtitle>אוכל ביתי טרי מהמטבח של סטיב, בקופסאות מוכנות לחימום</HeroSubtitle>
           </HeroContent>
         </HeroSection>
