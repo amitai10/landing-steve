@@ -3,7 +3,18 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, pathname, image, noindex }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  title,
+  pathname,
+  image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  noindex,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -53,7 +64,14 @@ function SEO({ description, lang, meta, title, pathname, image, noindex }) {
         { property: "og:site_name", content: site.siteMetadata.title },
         { property: "og:locale", content: "he_IL" },
         { property: "og:image", content: ogImage },
-        { property: "og:image:alt", content: site.siteMetadata.title },
+        { property: "og:image:secure_url", content: ogImage },
+        ...(imageWidth && imageHeight
+          ? [
+              { property: "og:image:width", content: String(imageWidth) },
+              { property: "og:image:height", content: String(imageHeight) },
+            ]
+          : []),
+        { property: "og:image:alt", content: imageAlt || site.siteMetadata.title },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:creator", content: site.siteMetadata.author },
         { name: "twitter:title", content: fullTitle },
@@ -82,6 +100,9 @@ SEO.defaultProps = {
   description: "",
   pathname: "/",
   image: null,
+  imageAlt: null,
+  imageWidth: null,
+  imageHeight: null,
   noindex: false,
 }
 
@@ -92,6 +113,9 @@ SEO.propTypes = {
   title: PropTypes.string,
   pathname: PropTypes.string,
   image: PropTypes.string,
+  imageAlt: PropTypes.string,
+  imageWidth: PropTypes.number,
+  imageHeight: PropTypes.number,
   noindex: PropTypes.bool,
 }
 

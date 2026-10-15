@@ -409,7 +409,10 @@ export default function MenuPage() {
         title="ארוחות מוכנות הביתה"
         description="תפריט ארוחות מוכנות הביתה מהמטבח של סטיב – אוכל ביתי טרי בקופסאות, מוכן לחימום: מנות עיקריות, מרקים, מנות טבעוניות ותוספות"
         pathname="/menu/"
-        image="/images/logo.jpeg"
+        image="/images/og-menu.jpg"
+        imageAlt="אוכל ביתי ומשלוחים – מהמטבח של סטיב"
+        imageWidth={1200}
+        imageHeight={630}
       />
       <PageContainer>
         <HeroSection src={withPrefix("/images/meat/20230316_145304.jpg")}>
