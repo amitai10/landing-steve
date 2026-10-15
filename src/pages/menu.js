@@ -9,7 +9,7 @@ import { READY_MEALS_MENU } from "../data/ready-meals-menu"
 
 const WHATSAPP_ORDER_URL =
   "https://wa.me/972528083737?text=" +
-  encodeURIComponent("היי סטיב, אשמח להזמין ארוחות מוכנות הביתה")
+  encodeURIComponent("היי סטיב, אשמח להזמין אוכל ביתי במשלוחים")
 
 // Styled Components
 const PageContainer = styled.div`
@@ -407,7 +407,7 @@ export default function MenuPage() {
     <Layout>
       <SEO
         title="אוכל ביתי במשלוחים"
-        description="תפריט ארוחות מוכנות הביתה מהמטבח של סטיב – אוכל ביתי טרי בקופסאות, מוכן לחימום: מנות עיקריות, מרקים, מנות טבעוניות ותוספות"
+        description="אוכל ביתי טרי בקופסאות, מוכן לחימום: מנות עיקריות, מרקים, מנות טבעוניות ותוספות"
         pathname="/menu/"
         image="/images/og-menu.jpg"
         imageAlt="אוכל ביתי במשלוחים – מהמטבח של סטיב"
